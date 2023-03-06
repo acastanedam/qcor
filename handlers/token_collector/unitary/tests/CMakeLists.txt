@@ -1,5 +1,5 @@
 
-link_directories(${XACC_ROOT}/lib)
+link_directories(${XACC_ROOT}/lib ${XACC_ROOT}/lib64)
 add_executable(UnitaryTokenCollectorTester UnitaryTokenCollectorTester.cpp)
 add_test(NAME qcor_UnitaryTokenCollectorTester COMMAND UnitaryTokenCollectorTester)
 target_include_directories(UnitaryTokenCollectorTester PRIVATE . ../../ ../../tests ${CMAKE_BINARY_DIR} ${XACC_ROOT}/include/gtest ${CMAKE_SOURCE_DIR}/runtime/qrt/internal_compiler)

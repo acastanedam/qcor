@@ -2,7 +2,7 @@
 configure_file(StaqTokenCollectorTester.in.cpp
                ${CMAKE_BINARY_DIR}/handlers/token_collector/staq/tests/StaqTokenCollectorTester.cpp)
 
-link_directories(${XACC_ROOT}/lib)
+link_directories(${XACC_ROOT}/lib ${XACC_ROOT}/lib64)
 add_executable(StaqTokenCollectorTester ${CMAKE_BINARY_DIR}/handlers/token_collector/staq/tests/StaqTokenCollectorTester.cpp)
 add_test(NAME qcor_StaqTokenCollectorTester COMMAND StaqTokenCollectorTester)
 target_include_directories(StaqTokenCollectorTester PRIVATE . ../../ ../../tests ${CMAKE_BINARY_DIR} ${XACC_ROOT}/include/gtest ${CMAKE_SOURCE_DIR}/runtime/qrt/internal_compiler)

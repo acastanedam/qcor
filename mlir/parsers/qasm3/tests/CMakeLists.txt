@@ -1,7 +1,7 @@
 
 
 
-link_directories(${XACC_ROOT}/lib)
+link_directories(${XACC_ROOT}/lib ${XACC_ROOT}/lib64)
 
 add_executable(qasm3CompilerTester_Alias test_alias_handler.cpp)
 add_test(NAME qcor_qasm3_quantum_alias_decl_tester COMMAND qasm3CompilerTester_Alias)
@@ -102,4 +102,3 @@ add_executable(qasm3CompilerTester_nisq_ifstmt test_nisq_if_statements.cpp)
 add_test(NAME qcor_qasm3_test_nisq_ifstmt COMMAND qasm3CompilerTester_nisq_ifstmt)
 target_include_directories(qasm3CompilerTester_nisq_ifstmt PRIVATE . ../../ ${CMAKE_SOURCE_DIR}/tools/clang-wrapper/ ${CMAKE_SOURCE_DIR}/handlers ${XACC_ROOT}/include/gtest)
 target_link_libraries(qasm3CompilerTester_nisq_ifstmt qcor-mlir-api gtest gtest_main qcor-clang-wrapper qcor-syntax-handler ${CLANG_LIBS})
-
